@@ -2,7 +2,7 @@
 @section('content')
         <div class="row">
             <div id="prediction_table">
-                @foreach($data->user_predictions as $prediction)
+                @foreach($data->predictions as $prediction)
                     <div class="match">
                         <div class="team-a">
                             <label class="name {{ strtolower($prediction->team_a->country_code) }}" for="{{Str::slug($prediction->team_a->name)}}">{{ $prediction->team_a->name }}</label>
@@ -33,6 +33,9 @@
                             <button class="button green" type="submit">Si, estoy seguro!</button>
                         </div>
                     </div>
+            </div>
+            <div class="comments" style="text-align:center; background-color: #fff; margin-top:50px; padding-top:30px">
+                <div class="fb-comments" data-href="{{URL::current()}}" data-width="700px" data-numposts="5" data-colorscheme="light"></div>
             </div>
         </div>
 @stop
